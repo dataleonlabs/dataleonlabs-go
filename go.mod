@@ -1,4 +1,4 @@
-module github.com/stainless-sdks/dataleonlabs-go
+module github.com/dataleonlabs/dataleonlabs-go
 
 go 1.21
 

@@ -2,7 +2,7 @@ package param
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/encoding/json/sentinel"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/encoding/json/sentinel"
 	"reflect"
 )
 

@@ -2,8 +2,8 @@ package apijson_test
 
 import (
 	"encoding/json"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apijson"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/respjson"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apijson"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/respjson"
 	"testing"
 )
 

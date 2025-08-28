@@ -2,7 +2,7 @@
 package json
 
 import (
-	"github.com/stainless-sdks/dataleonlabs-go/internal/encoding/json/shims"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/encoding/json/shims"
 	"reflect"
 	"time"
 )
