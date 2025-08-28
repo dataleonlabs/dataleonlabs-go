@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apijson"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/respjson"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apijson"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/respjson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

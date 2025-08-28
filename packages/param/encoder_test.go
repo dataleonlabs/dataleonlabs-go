@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 )
 
 type Struct struct {

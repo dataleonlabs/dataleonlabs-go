@@ -11,10 +11,10 @@ import (
 	"mime/multipart"
 	"net/http"
 
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apiform"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/requestconfig"
-	"github.com/stainless-sdks/dataleonlabs-go/option"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apiform"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/requestconfig"
+	"github.com/dataleonlabs/dataleonlabs-go/option"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 )
 
 // IndividualDocumentService contains methods and other services that help with

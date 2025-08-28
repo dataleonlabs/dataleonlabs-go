@@ -2,7 +2,7 @@ package paramutil
 
 import (
 	"fmt"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 	"reflect"
 )
 
