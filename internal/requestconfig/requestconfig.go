@@ -18,10 +18,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/dataleonlabs-go/internal"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apierror"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apiform"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apiquery"
+	"github.com/dataleonlabs/dataleonlabs-go/internal"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apierror"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apiform"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {

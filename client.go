@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/stainless-sdks/dataleonlabs-go/internal/requestconfig"
-	"github.com/stainless-sdks/dataleonlabs-go/option"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/requestconfig"
+	"github.com/dataleonlabs/dataleonlabs-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with

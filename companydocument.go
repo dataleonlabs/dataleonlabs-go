@@ -12,12 +12,12 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apiform"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apijson"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/requestconfig"
-	"github.com/stainless-sdks/dataleonlabs-go/option"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/respjson"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apiform"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apijson"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/requestconfig"
+	"github.com/dataleonlabs/dataleonlabs-go/option"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/respjson"
 )
 
 // CompanyDocumentService contains methods and other services that help with

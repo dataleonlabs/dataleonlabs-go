@@ -2,7 +2,7 @@ package apijson
 
 import (
 	"errors"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 	"reflect"
 
 	"github.com/tidwall/gjson"

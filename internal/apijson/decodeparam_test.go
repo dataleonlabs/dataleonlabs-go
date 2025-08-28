@@ -3,8 +3,8 @@ package apijson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apijson"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apijson"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 	"reflect"
 	"testing"
 )

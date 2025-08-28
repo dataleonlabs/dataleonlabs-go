@@ -1,8 +1,8 @@
 package sentinel_test
 
 import (
-	"github.com/stainless-sdks/dataleonlabs-go/internal/encoding/json/sentinel"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/encoding/json/sentinel"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 	"reflect"
 	"slices"
 	"testing"

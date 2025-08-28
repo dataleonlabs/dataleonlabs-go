@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/dataleonlabs-go"
-	"github.com/stainless-sdks/dataleonlabs-go/internal"
-	"github.com/stainless-sdks/dataleonlabs-go/option"
+	"github.com/dataleonlabs/dataleonlabs-go"
+	"github.com/dataleonlabs/dataleonlabs-go/internal"
+	"github.com/dataleonlabs/dataleonlabs-go/option"
 )
 
 type closureTransport struct {

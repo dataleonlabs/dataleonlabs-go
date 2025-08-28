@@ -3,8 +3,8 @@
 package dataleonlabs
 
 import (
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apierror"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apierror"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
 )
 
 // aliased to make [param.APIUnion] private when embedding

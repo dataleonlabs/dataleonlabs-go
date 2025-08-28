@@ -1,8 +1,8 @@
 package paramutil
 
 import (
-	"github.com/stainless-sdks/dataleonlabs-go/packages/param"
-	"github.com/stainless-sdks/dataleonlabs-go/packages/respjson"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/param"
+	"github.com/dataleonlabs/dataleonlabs-go/packages/respjson"
 )
 
 func AddrIfPresent[T comparable](v param.Opt[T]) *T {

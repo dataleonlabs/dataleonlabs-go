@@ -3,8 +3,8 @@ package respjson_test
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/stainless-sdks/dataleonlabs-go/internal/apijson"
-	rj "github.com/stainless-sdks/dataleonlabs-go/packages/respjson"
+	"github.com/dataleonlabs/dataleonlabs-go/internal/apijson"
+	rj "github.com/dataleonlabs/dataleonlabs-go/packages/respjson"
 	"reflect"
 	"testing"
 )

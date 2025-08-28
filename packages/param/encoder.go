@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"time"
 
-	shimjson "github.com/stainless-sdks/dataleonlabs-go/internal/encoding/json"
+	shimjson "github.com/dataleonlabs/dataleonlabs-go/internal/encoding/json"
 
 	"github.com/tidwall/sjson"
 )
