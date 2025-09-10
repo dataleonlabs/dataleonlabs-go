@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.0 (2025-09-10)
+
+Full Changelog: [v0.0.3...v0.1.0](https://github.com/dataleonlabs/dataleonlabs-go/compare/v0.0.3...v0.1.0)
+
+### Features
+
+* **api:** api update ([f6cf905](https://github.com/dataleonlabs/dataleonlabs-go/commit/f6cf905d79c75d291343ec89ae14723bbe9271b7))
+
 ## 0.0.3 (2025-09-06)
 
 Full Changelog: [v0.0.2...v0.0.3](https://github.com/dataleonlabs/dataleonlabs-go/compare/v0.0.2...v0.0.3)
