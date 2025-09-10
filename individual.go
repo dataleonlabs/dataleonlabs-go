@@ -250,6 +250,8 @@ type IndividualPerson struct {
 	LastName string `json:"last_name"`
 	// Maiden name of the person, if applicable.
 	MaidenName string `json:"maiden_name"`
+	// Nationality of the individual (ISO 3166-1 alpha-3 country code).
+	Nationality string `json:"nationality"`
 	// Contact phone number including country code.
 	PhoneNumber string `json:"phone_number"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
@@ -262,6 +264,7 @@ type IndividualPerson struct {
 		Gender             respjson.Field
 		LastName           respjson.Field
 		MaidenName         respjson.Field
+		Nationality        respjson.Field
 		PhoneNumber        respjson.Field
 		ExtraFields        map[string]respjson.Field
 		raw                string
@@ -335,6 +338,8 @@ type IndividualNewParamsPerson struct {
 	LastName param.Opt[string] `json:"last_name,omitzero"`
 	// Maiden name, if applicable.
 	MaidenName param.Opt[string] `json:"maiden_name,omitzero"`
+	// Nationality of the individual (ISO 3166-1 alpha-3 country code).
+	Nationality param.Opt[string] `json:"nationality,omitzero"`
 	// Phone number of the individual.
 	PhoneNumber param.Opt[string] `json:"phone_number,omitzero"`
 	// Gender of the individual (M for male, F for female).
@@ -368,6 +373,8 @@ type IndividualNewParamsTechnicalData struct {
 	CallbackURL param.Opt[string] `json:"callback_url,omitzero" format:"uri"`
 	// URL for receive notifications about the processing state or status.
 	CallbackURLNotification param.Opt[string] `json:"callback_url_notification,omitzero" format:"uri"`
+	// Minimum filtering score (between 0 and 1) for AML suspicions to be considered.
+	FilteringScoreAmlSuspicions param.Opt[float64] `json:"filtering_score_aml_suspicions,omitzero"`
 	// Preferred language for communication (e.g., "eng", "fra").
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
@@ -432,6 +439,8 @@ type IndividualUpdateParamsPerson struct {
 	LastName param.Opt[string] `json:"last_name,omitzero"`
 	// Maiden name, if applicable.
 	MaidenName param.Opt[string] `json:"maiden_name,omitzero"`
+	// Nationality of the individual (ISO 3166-1 alpha-3 country code).
+	Nationality param.Opt[string] `json:"nationality,omitzero"`
 	// Phone number of the individual.
 	PhoneNumber param.Opt[string] `json:"phone_number,omitzero"`
 	// Gender of the individual (M for male, F for female).
@@ -465,6 +474,8 @@ type IndividualUpdateParamsTechnicalData struct {
 	CallbackURL param.Opt[string] `json:"callback_url,omitzero" format:"uri"`
 	// URL for receive notifications about the processing state or status.
 	CallbackURLNotification param.Opt[string] `json:"callback_url_notification,omitzero" format:"uri"`
+	// Minimum filtering score (between 0 and 1) for AML suspicions to be considered.
+	FilteringScoreAmlSuspicions param.Opt[float64] `json:"filtering_score_aml_suspicions,omitzero"`
 	// Preferred language for communication (e.g., "eng", "fra").
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
