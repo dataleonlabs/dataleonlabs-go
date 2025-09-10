@@ -48,11 +48,12 @@ func TestCompanyNewWithOptionalParams(t *testing.T) {
 		WorkspaceID: "wk_123",
 		SourceID:    dataleonlabs.String("ID54410069066"),
 		TechnicalData: dataleonlabs.CompanyNewParamsTechnicalData{
-			ActiveAmlSuspicions:     dataleonlabs.Bool(false),
-			CallbackURL:             dataleonlabs.String("https://example.com/callback"),
-			CallbackURLNotification: dataleonlabs.String("https://example.com/notify"),
-			Language:                dataleonlabs.String("fra"),
-			RawData:                 dataleonlabs.Bool(true),
+			ActiveAmlSuspicions:         dataleonlabs.Bool(false),
+			CallbackURL:                 dataleonlabs.String("https://example.com/callback"),
+			CallbackURLNotification:     dataleonlabs.String("https://example.com/notify"),
+			FilteringScoreAmlSuspicions: dataleonlabs.Float(0.75),
+			Language:                    dataleonlabs.String("fra"),
+			RawData:                     dataleonlabs.Bool(true),
 		},
 	})
 	if err != nil {
@@ -131,11 +132,12 @@ func TestCompanyUpdateWithOptionalParams(t *testing.T) {
 			WorkspaceID: "wk_123",
 			SourceID:    dataleonlabs.String("ID54410069066"),
 			TechnicalData: dataleonlabs.CompanyUpdateParamsTechnicalData{
-				ActiveAmlSuspicions:     dataleonlabs.Bool(false),
-				CallbackURL:             dataleonlabs.String("https://example.com/callback"),
-				CallbackURLNotification: dataleonlabs.String("https://example.com/notify"),
-				Language:                dataleonlabs.String("fra"),
-				RawData:                 dataleonlabs.Bool(true),
+				ActiveAmlSuspicions:         dataleonlabs.Bool(false),
+				CallbackURL:                 dataleonlabs.String("https://example.com/callback"),
+				CallbackURLNotification:     dataleonlabs.String("https://example.com/notify"),
+				FilteringScoreAmlSuspicions: dataleonlabs.Float(0.75),
+				Language:                    dataleonlabs.String("fra"),
+				RawData:                     dataleonlabs.Bool(true),
 			},
 		},
 	)

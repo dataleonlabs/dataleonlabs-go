@@ -560,6 +560,8 @@ type TechnicalData struct {
 	DisableNotificationDate time.Time `json:"disable_notification_date,nullable" format:"date-time"`
 	// Export format defined by the API (e.g., "json", "xml").
 	ExportType string `json:"export_type"`
+	// Minimum filtering score (between 0 and 1) for AML suspicions to be considered.
+	FilteringScoreAmlSuspicions float64 `json:"filtering_score_aml_suspicions"`
 	// Timestamp when the process finished.
 	FinishedAt time.Time `json:"finished_at" format:"date-time"`
 	// IP address of the our system handling the request.
@@ -588,29 +590,30 @@ type TechnicalData struct {
 	TransferMode string `json:"transfer_mode"`
 	// JSON contains metadata for fields, check presence with [respjson.Field.Valid].
 	JSON struct {
-		ActiveAmlSuspicions      respjson.Field
-		APIVersion               respjson.Field
-		ApprovedAt               respjson.Field
-		CallbackURL              respjson.Field
-		CallbackURLNotification  respjson.Field
-		DisableNotification      respjson.Field
-		DisableNotificationDate  respjson.Field
-		ExportType               respjson.Field
-		FinishedAt               respjson.Field
-		IP                       respjson.Field
-		Language                 respjson.Field
-		LocationIP               respjson.Field
-		NeedReviewAt             respjson.Field
-		NotificationConfirmation respjson.Field
-		QrCode                   respjson.Field
-		RawData                  respjson.Field
-		RejectedAt               respjson.Field
-		SessionDuration          respjson.Field
-		StartedAt                respjson.Field
-		TransferAt               respjson.Field
-		TransferMode             respjson.Field
-		ExtraFields              map[string]respjson.Field
-		raw                      string
+		ActiveAmlSuspicions         respjson.Field
+		APIVersion                  respjson.Field
+		ApprovedAt                  respjson.Field
+		CallbackURL                 respjson.Field
+		CallbackURLNotification     respjson.Field
+		DisableNotification         respjson.Field
+		DisableNotificationDate     respjson.Field
+		ExportType                  respjson.Field
+		FilteringScoreAmlSuspicions respjson.Field
+		FinishedAt                  respjson.Field
+		IP                          respjson.Field
+		Language                    respjson.Field
+		LocationIP                  respjson.Field
+		NeedReviewAt                respjson.Field
+		NotificationConfirmation    respjson.Field
+		QrCode                      respjson.Field
+		RawData                     respjson.Field
+		RejectedAt                  respjson.Field
+		SessionDuration             respjson.Field
+		StartedAt                   respjson.Field
+		TransferAt                  respjson.Field
+		TransferMode                respjson.Field
+		ExtraFields                 map[string]respjson.Field
+		raw                         string
 	} `json:"-"`
 }
 
@@ -696,6 +699,8 @@ type CompanyNewParamsTechnicalData struct {
 	CallbackURL param.Opt[string] `json:"callback_url,omitzero" format:"uri"`
 	// URL to receive notifications about the processing state and status.
 	CallbackURLNotification param.Opt[string] `json:"callback_url_notification,omitzero" format:"uri"`
+	// Minimum filtering score (between 0 and 1) for AML suspicions to be considered.
+	FilteringScoreAmlSuspicions param.Opt[float64] `json:"filtering_score_aml_suspicions,omitzero"`
 	// Preferred language for responses or notifications (e.g., "eng", "fra").
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
@@ -803,6 +808,8 @@ type CompanyUpdateParamsTechnicalData struct {
 	CallbackURL param.Opt[string] `json:"callback_url,omitzero" format:"uri"`
 	// URL to receive notifications about the processing state and status.
 	CallbackURLNotification param.Opt[string] `json:"callback_url_notification,omitzero" format:"uri"`
+	// Minimum filtering score (between 0 and 1) for AML suspicions to be considered.
+	FilteringScoreAmlSuspicions param.Opt[float64] `json:"filtering_score_aml_suspicions,omitzero"`
 	// Preferred language for responses or notifications (e.g., "eng", "fra").
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
