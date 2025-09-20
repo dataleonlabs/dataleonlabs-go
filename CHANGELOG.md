@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.1 (2025-09-20)
+
+Full Changelog: [v0.1.0...v0.1.1](https://github.com/dataleonlabs/dataleonlabs-go/compare/v0.1.0...v0.1.1)
+
+### Bug Fixes
+
+* use slices.Concat instead of sometimes modifying r.Options ([65fd47e](https://github.com/dataleonlabs/dataleonlabs-go/commit/65fd47edf7772bdc43e23ec3afcd39184ae71a53))
+
+
+### Chores
+
+* bump minimum go version to 1.22 ([c050c3e](https://github.com/dataleonlabs/dataleonlabs-go/commit/c050c3e9a8e6913a7d01d8a202e54dbd9173d974))
+* do not install brew dependencies in ./scripts/bootstrap by default ([b6e4140](https://github.com/dataleonlabs/dataleonlabs-go/commit/b6e4140ef689879e50cbfc3d779d35c0d673d605))
+* update more docs for 1.22 ([c2c42d7](https://github.com/dataleonlabs/dataleonlabs-go/commit/c2c42d7e660a704de89caf5240dfe76c14beaa39))
+
 ## 0.1.0 (2025-09-10)
 
 Full Changelog: [v0.0.3...v0.1.0](https://github.com/dataleonlabs/dataleonlabs-go/compare/v0.0.3...v0.1.0)
