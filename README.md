@@ -35,7 +35,7 @@ go get -u 'github.com/dataleonlabs/dataleonlabs-go@v0.1.0'
 
 ## Requirements
 
-This library requires Go 1.18+.
+This library requires Go 1.22+.
 
 ## Usage
 
