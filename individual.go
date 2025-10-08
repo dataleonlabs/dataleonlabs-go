@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"slices"
 	"time"
 
 	"github.com/dataleonlabs/dataleonlabs-go/internal/apijson"
@@ -41,7 +42,7 @@ func NewIndividualService(opts ...option.RequestOption) (r IndividualService) {
 
 // Create a new individual
 func (r *IndividualService) New(ctx context.Context, body IndividualNewParams, opts ...option.RequestOption) (res *Individual, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "individuals"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodPost, path, body, &res, opts...)
 	return
@@ -49,7 +50,7 @@ func (r *IndividualService) New(ctx context.Context, body IndividualNewParams, o
 
 // Get an individual by ID
 func (r *IndividualService) Get(ctx context.Context, individualID string, query IndividualGetParams, opts ...option.RequestOption) (res *Individual, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")
 		return
@@ -61,7 +62,7 @@ func (r *IndividualService) Get(ctx context.Context, individualID string, query 
 
 // Update an individual by ID
 func (r *IndividualService) Update(ctx context.Context, individualID string, body IndividualUpdateParams, opts ...option.RequestOption) (res *Individual, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")
 		return
@@ -73,7 +74,7 @@ func (r *IndividualService) Update(ctx context.Context, individualID string, bod
 
 // Get all individuals
 func (r *IndividualService) List(ctx context.Context, query IndividualListParams, opts ...option.RequestOption) (res *[]Individual, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	path := "individuals"
 	err = requestconfig.ExecuteNewRequest(ctx, http.MethodGet, path, query, &res, opts...)
 	return
@@ -81,7 +82,7 @@ func (r *IndividualService) List(ctx context.Context, query IndividualListParams
 
 // Delete an individual by ID
 func (r *IndividualService) Delete(ctx context.Context, individualID string, opts ...option.RequestOption) (err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	opts = append([]option.RequestOption{option.WithHeader("Accept", "")}, opts...)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")

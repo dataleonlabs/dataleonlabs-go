@@ -10,6 +10,7 @@ import (
 	"io"
 	"mime/multipart"
 	"net/http"
+	"slices"
 
 	"github.com/dataleonlabs/dataleonlabs-go/internal/apiform"
 	"github.com/dataleonlabs/dataleonlabs-go/internal/requestconfig"
@@ -38,7 +39,7 @@ func NewIndividualDocumentService(opts ...option.RequestOption) (r IndividualDoc
 
 // Get documents to an individuals
 func (r *IndividualDocumentService) List(ctx context.Context, individualID string, opts ...option.RequestOption) (res *DocumentResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")
 		return
@@ -50,7 +51,7 @@ func (r *IndividualDocumentService) List(ctx context.Context, individualID strin
 
 // Upload documents to an individual
 func (r *IndividualDocumentService) Upload(ctx context.Context, individualID string, body IndividualDocumentUploadParams, opts ...option.RequestOption) (res *GenericDocument, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")
 		return

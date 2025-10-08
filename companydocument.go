@@ -10,6 +10,7 @@ import (
 	"io"
 	"mime/multipart"
 	"net/http"
+	"slices"
 	"time"
 
 	"github.com/dataleonlabs/dataleonlabs-go/internal/apiform"
@@ -41,7 +42,7 @@ func NewCompanyDocumentService(opts ...option.RequestOption) (r CompanyDocumentS
 
 // Get documents to an company
 func (r *CompanyDocumentService) List(ctx context.Context, companyID string, opts ...option.RequestOption) (res *DocumentResponse, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if companyID == "" {
 		err = errors.New("missing required company_id parameter")
 		return
@@ -53,7 +54,7 @@ func (r *CompanyDocumentService) List(ctx context.Context, companyID string, opt
 
 // Upload documents to an company
 func (r *CompanyDocumentService) Upload(ctx context.Context, companyID string, body CompanyDocumentUploadParams, opts ...option.RequestOption) (res *GenericDocument, err error) {
-	opts = append(r.Options[:], opts...)
+	opts = slices.Concat(r.Options, opts)
 	if companyID == "" {
 		err = errors.New("missing required company_id parameter")
 		return
