@@ -575,6 +575,11 @@ type TechnicalData struct {
 	NeedReviewAt time.Time `json:"need_review_at,nullable" format:"date-time"`
 	// Flag indicating if notification confirmation is required or received.
 	NotificationConfirmation bool `json:"notification_confirmation"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps"`
 	// Indicates whether QR code is enabled ("true" or "false").
 	QrCode string `json:"qr_code"`
 	// Flag indicating whether to include raw data in the response.
@@ -606,6 +611,7 @@ type TechnicalData struct {
 		LocationIP                  respjson.Field
 		NeedReviewAt                respjson.Field
 		NotificationConfirmation    respjson.Field
+		PortalSteps                 respjson.Field
 		QrCode                      respjson.Field
 		RawData                     respjson.Field
 		RejectedAt                  respjson.Field
@@ -706,6 +712,11 @@ type CompanyNewParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 
@@ -815,6 +826,11 @@ type CompanyUpdateParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 
