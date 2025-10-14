@@ -380,6 +380,11 @@ type IndividualNewParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 
@@ -481,6 +486,11 @@ type IndividualUpdateParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 
