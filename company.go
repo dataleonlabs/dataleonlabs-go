@@ -83,7 +83,7 @@ func (r *CompanyService) List(ctx context.Context, query CompanyListParams, opts
 // Delete a company by ID
 func (r *CompanyService) Delete(ctx context.Context, companyID string, opts ...option.RequestOption) (err error) {
 	opts = slices.Concat(r.Options, opts)
-	opts = append([]option.RequestOption{option.WithHeader("Accept", "")}, opts...)
+	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if companyID == "" {
 		err = errors.New("missing required company_id parameter")
 		return

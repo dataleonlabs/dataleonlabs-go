@@ -83,7 +83,7 @@ func (r *IndividualService) List(ctx context.Context, query IndividualListParams
 // Delete an individual by ID
 func (r *IndividualService) Delete(ctx context.Context, individualID string, opts ...option.RequestOption) (err error) {
 	opts = slices.Concat(r.Options, opts)
-	opts = append([]option.RequestOption{option.WithHeader("Accept", "")}, opts...)
+	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")
 		return
