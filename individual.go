@@ -184,6 +184,8 @@ type IndividualIdentityCard struct {
 	Birthday string `json:"birthday"`
 	// Country code issuing the document (ISO 3166-1 alpha-2).
 	Country string `json:"country"`
+	// Date of entitlement or validity start date, in YYYY-MM-DD format.
+	EntitlementDate string `json:"entitlement_date"`
 	// Expiration date of the document, in YYYY-MM-DD format.
 	ExpirationDate string `json:"expiration_date"`
 	// First name as shown on the document.
@@ -211,6 +213,7 @@ type IndividualIdentityCard struct {
 		BirthPlace             respjson.Field
 		Birthday               respjson.Field
 		Country                respjson.Field
+		EntitlementDate        respjson.Field
 		ExpirationDate         respjson.Field
 		FirstName              respjson.Field
 		FrontDocumentSignedURL respjson.Field
