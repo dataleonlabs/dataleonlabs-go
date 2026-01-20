@@ -83,7 +83,7 @@ func (r *CompanyService) List(ctx context.Context, query CompanyListParams, opts
 // Delete a company by ID
 func (r *CompanyService) Delete(ctx context.Context, companyID string, opts ...option.RequestOption) (err error) {
 	opts = slices.Concat(r.Options, opts)
-	opts = append([]option.RequestOption{option.WithHeader("Accept", "")}, opts...)
+	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if companyID == "" {
 		err = errors.New("missing required company_id parameter")
 		return
@@ -551,6 +551,8 @@ type TechnicalData struct {
 	APIVersion int64 `json:"api_version"`
 	// Timestamp when the request or process was approved.
 	ApprovedAt time.Time `json:"approved_at" format:"date-time"`
+	// Identifier of the actor who approved (e.g., user id or username).
+	ApprovedBy string `json:"approved_by,nullable"`
 	// URL to receive callback data from the AML system.
 	CallbackURL string `json:"callback_url" format:"uri"`
 	// URL to receive notification updates about the processing status.
@@ -573,14 +575,23 @@ type TechnicalData struct {
 	LocationIP string `json:"location_ip"`
 	// Timestamp indicating when the request or process needs review; null if none.
 	NeedReviewAt time.Time `json:"need_review_at,nullable" format:"date-time"`
+	// Identifier of the actor who requested review (e.g., user id or username).
+	NeedReviewBy string `json:"need_review_by,nullable"`
 	// Flag indicating if notification confirmation is required or received.
 	NotificationConfirmation bool `json:"notification_confirmation"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps"`
 	// Indicates whether QR code is enabled ("true" or "false").
 	QrCode string `json:"qr_code"`
 	// Flag indicating whether to include raw data in the response.
 	RawData bool `json:"raw_data"`
 	// Timestamp when the request or process was rejected; null if not rejected.
 	RejectedAt time.Time `json:"rejected_at,nullable" format:"date-time"`
+	// Identifier of the actor who rejected (e.g., user id or username).
+	RejectedBy string `json:"rejected_by,nullable"`
 	// Duration of the user session in seconds.
 	SessionDuration int64 `json:"session_duration"`
 	// Timestamp when the process started.
@@ -594,6 +605,7 @@ type TechnicalData struct {
 		ActiveAmlSuspicions         respjson.Field
 		APIVersion                  respjson.Field
 		ApprovedAt                  respjson.Field
+		ApprovedBy                  respjson.Field
 		CallbackURL                 respjson.Field
 		CallbackURLNotification     respjson.Field
 		DisableNotification         respjson.Field
@@ -605,10 +617,13 @@ type TechnicalData struct {
 		Language                    respjson.Field
 		LocationIP                  respjson.Field
 		NeedReviewAt                respjson.Field
+		NeedReviewBy                respjson.Field
 		NotificationConfirmation    respjson.Field
+		PortalSteps                 respjson.Field
 		QrCode                      respjson.Field
 		RawData                     respjson.Field
 		RejectedAt                  respjson.Field
+		RejectedBy                  respjson.Field
 		SessionDuration             respjson.Field
 		StartedAt                   respjson.Field
 		TransferAt                  respjson.Field
@@ -706,6 +721,11 @@ type CompanyNewParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 
@@ -815,6 +835,11 @@ type CompanyUpdateParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 

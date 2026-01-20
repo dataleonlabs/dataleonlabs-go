@@ -65,7 +65,7 @@ type IndividualDocumentUploadParams struct {
 	// Filter by document type for upload (must be one of the allowed values)
 	//
 	// Any of "liasse_fiscale", "amortised_loan_schedule", "invoice", "receipt",
-	// "company_statuts", "registration_company_certificate", "kbis", "rib",
+	// "company_statuts", "registration_company_certificate", "kbis", "rib", "check",
 	// "livret_famille", "birth_certificate", "payslip", "social_security_card",
 	// "vehicle_registration_certificate", "carte_grise", "criminal_record_extract",
 	// "proof_of_address", "identity_card_front", "identity_card_back",
@@ -112,6 +112,7 @@ const (
 	IndividualDocumentUploadParamsDocumentTypeRegistrationCompanyCertificate IndividualDocumentUploadParamsDocumentType = "registration_company_certificate"
 	IndividualDocumentUploadParamsDocumentTypeKbis                           IndividualDocumentUploadParamsDocumentType = "kbis"
 	IndividualDocumentUploadParamsDocumentTypeRib                            IndividualDocumentUploadParamsDocumentType = "rib"
+	IndividualDocumentUploadParamsDocumentTypeCheck                          IndividualDocumentUploadParamsDocumentType = "check"
 	IndividualDocumentUploadParamsDocumentTypeLivretFamille                  IndividualDocumentUploadParamsDocumentType = "livret_famille"
 	IndividualDocumentUploadParamsDocumentTypeBirthCertificate               IndividualDocumentUploadParamsDocumentType = "birth_certificate"
 	IndividualDocumentUploadParamsDocumentTypePayslip                        IndividualDocumentUploadParamsDocumentType = "payslip"

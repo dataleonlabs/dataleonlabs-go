@@ -83,7 +83,7 @@ func (r *IndividualService) List(ctx context.Context, query IndividualListParams
 // Delete an individual by ID
 func (r *IndividualService) Delete(ctx context.Context, individualID string, opts ...option.RequestOption) (err error) {
 	opts = slices.Concat(r.Options, opts)
-	opts = append([]option.RequestOption{option.WithHeader("Accept", "")}, opts...)
+	opts = append([]option.RequestOption{option.WithHeader("Accept", "*/*")}, opts...)
 	if individualID == "" {
 		err = errors.New("missing required individual_id parameter")
 		return
@@ -184,6 +184,8 @@ type IndividualIdentityCard struct {
 	Birthday string `json:"birthday"`
 	// Country code issuing the document (ISO 3166-1 alpha-2).
 	Country string `json:"country"`
+	// Date of entitlement or validity start date, in YYYY-MM-DD format.
+	EntitlementDate string `json:"entitlement_date"`
 	// Expiration date of the document, in YYYY-MM-DD format.
 	ExpirationDate string `json:"expiration_date"`
 	// First name as shown on the document.
@@ -211,6 +213,7 @@ type IndividualIdentityCard struct {
 		BirthPlace             respjson.Field
 		Birthday               respjson.Field
 		Country                respjson.Field
+		EntitlementDate        respjson.Field
 		ExpirationDate         respjson.Field
 		FirstName              respjson.Field
 		FrontDocumentSignedURL respjson.Field
@@ -380,6 +383,11 @@ type IndividualNewParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 
@@ -481,6 +489,11 @@ type IndividualUpdateParamsTechnicalData struct {
 	Language param.Opt[string] `json:"language,omitzero"`
 	// Flag indicating whether to include raw data in the response.
 	RawData param.Opt[bool] `json:"raw_data,omitzero"`
+	// List of steps to include in the portal workflow.
+	//
+	// Any of "identity_verification", "document_signing", "proof_of_address",
+	// "selfie", "face_match".
+	PortalSteps []string `json:"portal_steps,omitzero"`
 	paramObj
 }
 

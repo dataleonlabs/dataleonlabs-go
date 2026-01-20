@@ -53,6 +53,7 @@ func TestCompanyNewWithOptionalParams(t *testing.T) {
 			CallbackURLNotification:     dataleonlabs.String("https://example.com/notify"),
 			FilteringScoreAmlSuspicions: dataleonlabs.Float(0.75),
 			Language:                    dataleonlabs.String("fra"),
+			PortalSteps:                 []string{"identity_verification", "document_signing"},
 			RawData:                     dataleonlabs.Bool(true),
 		},
 	})
@@ -137,6 +138,7 @@ func TestCompanyUpdateWithOptionalParams(t *testing.T) {
 				CallbackURLNotification:     dataleonlabs.String("https://example.com/notify"),
 				FilteringScoreAmlSuspicions: dataleonlabs.Float(0.75),
 				Language:                    dataleonlabs.String("fra"),
+				PortalSteps:                 []string{"identity_verification", "document_signing"},
 				RawData:                     dataleonlabs.Bool(true),
 			},
 		},
