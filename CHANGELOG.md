@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.2.0 (2026-01-20)
+
+Full Changelog: [v0.1.1...v0.2.0](https://github.com/dataleonlabs/dataleonlabs-go/compare/v0.1.1...v0.2.0)
+
+### Features
+
+* **api:** api update ([fcaa005](https://github.com/dataleonlabs/dataleonlabs-go/commit/fcaa0050cba2d2881212f146f5105670135c4f3c))
+* **api:** api update ([1332137](https://github.com/dataleonlabs/dataleonlabs-go/commit/1332137449e5114760744e4e18a34f8664397ef4))
+* **api:** api update ([6f2a6e1](https://github.com/dataleonlabs/dataleonlabs-go/commit/6f2a6e1ef53a1b56f7a215fe1c3056fba1eed0b8))
+* **api:** api update ([fd57237](https://github.com/dataleonlabs/dataleonlabs-go/commit/fd57237f15c0a538351a725f9bd5743f68db4d9e))
+* **api:** api update ([5bb6adf](https://github.com/dataleonlabs/dataleonlabs-go/commit/5bb6adf021928d80e58b90b61abf9f232c0feac5))
+
+
+### Bug Fixes
+
+* **client:** correctly specify Accept header with */* instead of empty ([e583310](https://github.com/dataleonlabs/dataleonlabs-go/commit/e5833104a5ac7311cba68a03102308c9f0d576bd))
+* **mcp:** correct code tool API endpoint ([a2efaf3](https://github.com/dataleonlabs/dataleonlabs-go/commit/a2efaf393377c9e7059f9a6eb57ccb19fd811296))
+* rename param to avoid collision ([34241b9](https://github.com/dataleonlabs/dataleonlabs-go/commit/34241b9057c0e8fbbde5236ca56ea567a263fbf8))
+
+
+### Chores
+
+* bump gjson version ([bb52194](https://github.com/dataleonlabs/dataleonlabs-go/commit/bb5219439afe4fd0c0c2cb1be0ab52d356d009f2))
+* elide duplicate aliases ([f335c20](https://github.com/dataleonlabs/dataleonlabs-go/commit/f335c2049b2a00c9e2164668ac1a00ab419ffcec))
+* **internal:** codegen related update ([0cd8bf3](https://github.com/dataleonlabs/dataleonlabs-go/commit/0cd8bf3c5420db59226db69d3d77d5ac4ce3dadb))
+* **internal:** grammar fix (it's -&gt; its) ([6ee325b](https://github.com/dataleonlabs/dataleonlabs-go/commit/6ee325b4a102d501c8e7ef95285922f11d024c36))
+
 ## 0.1.1 (2025-09-26)
 
 Full Changelog: [v0.1.0...v0.1.1](https://github.com/dataleonlabs/dataleonlabs-go/compare/v0.1.0...v0.1.1)
